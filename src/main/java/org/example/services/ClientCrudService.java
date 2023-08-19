@@ -52,7 +52,7 @@ public class ClientCrudService {
         List<Client> clients;
 
         Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
-        clients = session.createQuery("FROM client", Client.class).list();
+        clients = session.createQuery("FROM Client", Client.class).list();
         session.close();
         return clients;
     }
