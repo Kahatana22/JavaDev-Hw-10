@@ -52,7 +52,7 @@ public class PlanetCrudService {
         List<Planet> planets;
 
         Session session = HibernateUtil.getInstance().getSessionFactory().openSession();
-        planets = session.createQuery("select planet from Planet planet", Planet.class).list();
+        planets = session.createQuery("FROM Planet", Planet.class).list();
         session.close();
         return planets;
     }
